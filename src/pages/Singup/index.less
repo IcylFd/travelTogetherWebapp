@@ -1,0 +1,173 @@
+@import '../../style/theme.less';
+
+.header {
+  height: 4em;
+  text-align: center;
+  background-color: @color-bg-blue;
+  line-height: 4em;
+  color: @color-text-white;
+  font-size: 1.2em;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  .back-icon {
+    position: absolute;
+    top: 2em;
+    transform: translateY(-50%);
+    left: 1em;
+  }
+}
+.am-wingblank {
+  background-color: #fff;
+  border-radius: 20px;
+  min-height: 36em;
+}
+.am-steps {
+  padding-top: 2em;
+}
+.am-steps-item-finish .am-steps-item-tail:after {
+  background-color: @color-bg-light-yellow;
+}
+
+.cur-icon {
+  color: @color-bg-light-yellow;
+}
+
+.container {
+  background: @color-bg-blue;
+}
+
+.step-content {
+  padding: 0 2em;
+  .step1-content {
+    .title {
+      font-size: 2.5em;
+      color: @color-text-dark
+    }
+    .content {
+      margin-top: 1.5em;
+      color: @color-text-gray;
+      p {
+        margin: 0.5em 0;
+      }
+    }
+    .login-part {
+      margin-top: 3em;
+    }
+    .am-list-body::before {
+      display: none;
+    }
+    .am-list-item {
+      padding-left: 0;
+      .am-input-item {
+        padding-left: 0;
+      }
+      .am-input-label.am-input-label-5 {
+        width: 1.5em;
+        color: @color-text-gray;
+      }
+      .am-input-control input {
+        font-size: 0.9em;
+      }
+    }
+    .btn-group {
+      width: 12em;
+      display: flex;
+      border: 2px solid @color-bg-light-yellow;
+      border-radius: 2em;
+      margin: 3.5em auto 0 auto;
+      
+      .am-button {
+        border: none;
+        height: 3em;
+        line-height: 3em;
+        font-size: 1.1em;
+        background: none;
+        display: inline;
+        flex: 1;
+        color: @color-text-yellow;
+      }
+      .am-button::before {
+        content: none;
+      }
+    }
+    .login-btn::after {
+      content: '';
+      height: 1em;
+      width: 1em;
+      background-color: @color-bg-gray;
+    }
+  }
+
+  .step2-content {
+    .name-form {
+      display: flex;
+    }
+    .form-title {
+      font-size: 1.1em;
+      flex: 1;
+      line-height: 4em;
+    }
+    .am-list {
+      width: 8em;
+      flex: 4;
+      .am-list-item.am-input-item {
+        padding-left: 0;
+      }
+      .am-list-item .am-input-control input {
+        width: 50%;
+      }
+      .am-list-body::before {
+        content: none;
+      }
+      .am-list-body::after {
+        width: 50%;
+      }
+    }
+
+    .tag-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    .tag-item {
+      width: 6.5em;
+      height: 2.5em;
+      border: 1px solid @color-text-gray;
+      border-radius: 1.5em;
+      line-height: 2.5em;
+      margin-left: 1.8%;
+      margin-bottom: 1.2em;
+      box-sizing: border-box;
+    }
+    .tag-item:nth-child(3n) {
+      margin-right: 0;
+    }
+    .am-tag-active {
+      background: @color-bg-blue;
+      border: 1px solid @color-text-blue;
+      color: @color-text-white;
+    }
+    .am-tag-active::before {
+      content: none;
+    }
+    .am-tag-normal::before {
+      content: none;
+    }
+    .next-btn {
+      width: 8em;
+      height: 3em;
+      margin: 2em auto;
+      background: @color-bg-light-yellow;
+      border-radius: 5em;
+      line-height: 3em;
+      color: @color-text-white;
+      .am-icon {
+        width: 2em;
+        height: 2em;
+        margin-top: 0.5em;
+      }
+    }
+  }
+ 
+}
+
