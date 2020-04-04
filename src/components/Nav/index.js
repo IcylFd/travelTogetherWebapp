@@ -1,3 +1,8 @@
+/*
+ * @Date: 2020-03-19 04:54:06
+ * @LastEditors: lifangdi
+ * @LastEditTime: 2020-03-22 16:13:46
+ */
 import React, { Component } from 'react'
 import { withRouter, Link, HashRouter } from 'react-router-dom'
 import { TabBar } from 'antd-mobile';
@@ -77,7 +82,7 @@ class TabNav extends Component {
 
   render() {
     return (
-      <div style={this.state.fullScreen ? { position: 'fixed', height: '100%', width: '100%', top: 0 } : { height: 50 }}>
+      <div className="main-nav" style={this.state.fullScreen ? { position: 'fixed', height: '100%', width: '100%', top: 0 } : { height: 50, position: 'fixed', width: '100%' }}>
         <TabBar
           unselectedTintColor="#949494"
           tintColor="#4056A1"

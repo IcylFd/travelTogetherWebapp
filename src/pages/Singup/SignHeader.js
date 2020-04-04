@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-03-19 04:54:06
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-03-21 03:10:30
+ * @LastEditTime: 2020-03-22 14:52:27
  */
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
@@ -15,7 +15,7 @@ class SignHeader extends Component {
   render() {
     const { SignupStore: { changeCurStep, curStep }, title } = this.props
     return (
-      <div className="header">
+      <div className="sign-header">
         {curStep !== 0 && <Icon className="back-icon" type="left" onClick={() => changeCurStep(curStep - 1)} />}
         <span>{title}</span>
       </div>

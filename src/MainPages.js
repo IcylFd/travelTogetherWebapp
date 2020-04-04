@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-03-19 04:13:57
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-03-20 17:43:58
+ * @LastEditTime: 2020-04-04 14:58:15
  */
 import React, { Suspense, Component } from 'react';
 import { observer, inject } from 'mobx-react';
@@ -15,28 +15,33 @@ import Mine from './pages/Mine'
 import Schedule from './pages/Schedule'
 import Discovery from './pages/Discovery'
 
+@withRouter
 @observer
 class MainPages extends Component {
   state = {
-    clientHeight: 736
+    screenInfo: {
+      clientHeight: 736,
+      clientWidth: 414
+    }
   }
   componentDidMount() {
     this.setState({
-      clientHeight: window.screen.height
+      screenInfo: {
+        clientHeight: window.screen.height,
+        clientWidth: window.screen.width,
+      }
     })
   }
   render() {
-    console.log(this.props)
-    const { clientHeight } = this.state
     return (
       <HashRouter>
         <Header />
         <Switch>
           <Suspense fallback={null}>
-            <Route path="/main/home" component={() => <Home clientHeight={clientHeight} />} />
-            <Route path="/main/schedule" component={() => <Schedule clientHeight={clientHeight} />} />
-            <Route path="/main/discovery" component={() => <Discovery clientHeight={clientHeight} />} />
-            <Route path="/main/mine" component={() => <Mine clientHeight={clientHeight} />} />
+            <Route path="/main/home" component={() => <Home screenInfo={this.state.screenInfo} />} />
+            <Route path="/main/schedule" component={() => <Schedule screenInfo={this.state.screenInfo} />} />
+            <Route path="/main/discovery" component={() => <Discovery screenInfo={this.state.screenInfo} />} />
+            <Route path="/main/mine" component={() => <Mine screenInfo={this.state.screenInfo} transparent />} />
           </Suspense>
         </Switch>
         <TabNav />

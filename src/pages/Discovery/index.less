@@ -1,0 +1,114 @@
+@import '../../style/theme.less';
+
+.filter-pop {
+  padding: 16px;
+  .separate {
+    width: 100%;
+    height: 1px;
+    background: @color-bg-gray;
+    margin-bottom: 16px;
+  }
+  .item-header {
+    margin-bottom: 16px;
+  }
+  .tag-content {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+    &:last-child {
+      margin: 0;
+    }
+    .am-popover-item-active {
+      background: @color-bg-light-blue;
+    }
+  }
+  .tag-item {
+    width: 80px;
+    background: @color-bg-blue;
+    border-radius: 20px;
+    color: #fff;
+    margin: 0 10px 10px 0;
+    .am-popover-item-content {
+      margin: 0 auto;
+    }
+  }
+}
+
+.discovery-header {
+  height: 50px;
+  padding-bottom: 10px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid @color-bg-gray;
+  display: flex;
+  justify-content: space-around;
+  line-height: 50px;
+  font-size: 2em;
+  .header-title {
+    flex: 1;
+    text-shadow: 1px 1px 1px #000;
+    color: #fff;
+  }
+  .header-icon {
+    line-height: 60px;
+    color: @color-text-blue;
+  }
+}
+
+.discovery-content {
+  .item {
+    width: 100%;
+    height: 120px;
+    border-radius: 10px;
+    box-shadow: 0 8px 10px 0 @color-bg-gray;
+    display: flex;
+    margin-bottom: 24px;
+    position: relative;
+    .type-tag {
+      position: absolute;
+      padding: 1px 5px;
+      background-color: @color-bg-blue;
+      top: 8%;
+      transform: translateX(-15%);
+      color: @color-text-white;
+      font-size: 1.2em;
+    }
+    .item-img {
+      width: 120px;
+      background-position:center;
+      border-radius: 10px 0 0 10px;
+    }
+    .item-info {
+      flex: 1.8;
+      padding: 10px 16px 10px 24px;
+      display: flex;
+      flex-direction: column;
+      color: @color-text-gray;
+    }
+    .info-title {
+      font-size: 1.4em;
+      font-weight: bold;
+      margin-bottom: 3px;
+      color: @color-text-header;
+    }
+    .info-subtitle {
+      font-size: 1.2em;
+      flex: 2;
+    }
+    .spend {
+      font-size: 1em;
+      flex: 1;
+      margin-bottom: 5px;
+
+      span {
+        font-size: 1.3em;
+      }
+    }
+    .info-desc {
+      display: flex;
+      justify-content: space-between;
+      .like-icon .anticon{
+        margin-right: 3px;
+      }
+    }
+  }
+}

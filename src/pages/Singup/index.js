@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-03-19 04:54:06
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-03-21 13:39:15
+ * @LastEditTime: 2020-04-04 15:00:43
  */
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
@@ -41,7 +41,7 @@ class Singup extends Component {
 
   render() {
     const { SignupStore: { curStep, curTitle } } = this.props
-    const { clientHeight } = this.props
+    const { srceenInfo: { clientHeight } } = this.props
     return (
       <div style={{height: clientHeight}} className="container">
         <SignHeader title={curTitle}/>

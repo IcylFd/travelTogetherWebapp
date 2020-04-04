@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-03-19 04:13:57
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-03-20 21:32:19
+ * @LastEditTime: 2020-04-04 15:01:51
  */
 import React, { Suspense, Component } from 'react';
 import { observer, inject } from 'mobx-react';
@@ -15,11 +15,17 @@ import Singup from './pages/Singup';
 @observer
 class SinglePages extends Component {
   state = {
-    clientHeight: 736
+    screenInfo: {
+      clientHeight: 736,
+      clientWidth: 414
+    }
   }
   componentDidMount() {
     this.setState({
-      clientHeight: window.screen.height
+      screenInfo: {
+        clientHeight: window.screen.height,
+        clientWidth: window.screen.width,
+      }
     })
   }
   render() {

@@ -1,18 +1,26 @@
 /*
  * @Date: 2020-03-19 04:54:06
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-03-21 22:39:21
+ * @LastEditTime: 2020-03-22 16:33:43
  */
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
-import { ImagePicker } from 'antd-mobile';
+import { ImagePicker, Tabs } from 'antd-mobile';
 import Cropper from 'react-cropper'
+import Favourite from './Favourite';
+import TravelFootpoints from './TravelFootpoints'
+import './index.less'
+
 
 const data = [{
   url: 'https://zos.alipayobjects.com/rmsportal/PZUUCKTRIHWiZSY.jpeg',
   id: '2121',
 }];
 
+const tabs = [
+  { title: '足迹'},
+  { title: '收藏'}
+]
 const cropper = React.createRef(null);
 
 @withRouter
@@ -41,10 +49,9 @@ class Mine extends Component {
 
   render() {
     const { files } = this.state;
-    const { clientHeight } = this.props
     return (
-      <div style={{height: clientHeight - 95}}>
-        <ImagePicker
+      <div className="mine-content" style={{marginTop: 50, paddingBottom: 60}}>
+        {/* <ImagePicker
           files={files}
           onChange={this.onChange}
           onImageClick={this.onImageClick}
@@ -61,7 +68,26 @@ class Mine extends Component {
         // Cropper.js options
         aspectRatio={16 / 9}
         guides={false}
-        crop={this._crop.bind(this)} />
+        crop={this._crop.bind(this)} /> */}
+        <div className="info-card">
+          <div className="avatar"></div>
+          <div className="user-name">icy</div>
+        </div>
+        <div>
+        <Tabs tabs={tabs}
+          initialPage={1}
+          onChange={(tab, index) => { console.log('onChange', index, tab); }}
+          onTabClick={(tab, index) => { console.log('onTabClick', index, tab); }}
+          tabBarUnderlineStyle={{display: 'none'}}
+          tabBarBackgroundColor={'transparent'}
+          tabBarActiveTextColor={'#bdb5da'}
+          tabBarInactiveTextColor={'#c5cbe3'}
+          animated={false}
+        >
+          <TravelFootpoints />
+          <Favourite />
+        </Tabs>
+        </div>
       </div>
     )
   }

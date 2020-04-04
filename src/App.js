@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-03-19 04:13:57
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-03-21 01:09:06
+ * @LastEditTime: 2020-04-04 14:57:08
  */
 import React, { Suspense, Component } from 'react';
 import { observer, inject, Provider } from 'mobx-react';
@@ -14,17 +14,7 @@ import stores from './stores'
 
 @observer
 class App extends Component {
-  state = {
-    clientHeight: 736
-  }
-  componentDidMount() {
-    this.setState({
-      clientHeight: window.screen.height
-    })
-  }
   render() {
-    console.log(this.props)
-    const { clientHeight } = this.state
     return (
       <Provider {...stores}>
         <HashRouter>

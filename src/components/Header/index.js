@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-03-19 18:08:49
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-03-20 18:42:27
+ * @LastEditTime: 2020-03-22 16:34:37
  */
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
@@ -19,7 +19,7 @@ class Header extends Component {
       case '/main/discovery':
         return '发现'
       case '/main/mine':
-        return '我的'
+        return ''
       default:
         break;
     }
@@ -27,17 +27,19 @@ class Header extends Component {
   render() {
     console.log(this.props)
     return (
-      <NavBar
-        mode="light"
-        icon={<Icon type="left" />}
-        onLeftClick={() => console.log('onLeftClick')}
-        rightContent={[
-          // <Icon key="0" type="search" style={{ marginRight: '16px' }} />,
-          <Icon key="1" type="ellipsis" />,
-        ]}
-      >
-        {this.renderHeaderTitle()}
-      </NavBar>
+      <div className="header">
+        <NavBar
+          mode="light"
+          icon={<Icon type="left" />}
+          onLeftClick={() => console.log('onLeftClick')}
+          rightContent={[
+            // <Icon key="0" type="search" style={{ marginRight: '16px' }} />,
+            <Icon key="1" type="ellipsis" />,
+          ]}
+        >
+          {this.renderHeaderTitle()}
+        </NavBar>
+      </div>
     )
   }
 }
