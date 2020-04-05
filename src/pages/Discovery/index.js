@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-03-19 04:54:06
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-04-04 15:40:04
+ * @LastEditTime: 2020-04-06 00:27:25
  */
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
@@ -115,7 +115,7 @@ class Home extends Component {
     return discoveryData && discoveryData.map(item => (
       <div className="item">
         <div className="type-tag">{item.type}</div>
-        <div className="item-img" style={{backgroundImage: 'url(https://user-images.githubusercontent.com/38416128/78419061-586c5500-7674-11ea-9a52-3c4bde684304.jpeg)'}}></div>
+        <div className="item-img" style={{ backgroundImage: `url(${item.imgUrl})` }}></div>
         <div className="item-info">
           <p className="info-title">{item.title}</p>
           <p className="info-subtitle">{item.subTitle}</p>
