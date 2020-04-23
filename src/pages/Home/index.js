@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-03-22 16:19:12
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-04-06 02:32:45
+ * @LastEditTime: 2020-04-06 16:59:02
  */
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
@@ -15,7 +15,7 @@ class Home extends Component {
   renderContent = tab => {
     console.log(tab)
     return (
-      <div style={{width: '93%', margin: '44px auto 24px auto' }}>
+      <div style={{width: '93%', margin: '44px auto 65px auto' }}>
         <img src={tab.headImgUrl} alt="" style={{width: '100%' }} />
         <div className="schedule-content">
         {
@@ -44,7 +44,9 @@ class Home extends Component {
           ))
         }
         </div>
-        <div>增加一个行程</div>
+        <div className="add-btn">
+          <MyIcon type="iconadd"></MyIcon>增加一个行程
+        </div>
       </div>
     );
   }
@@ -63,7 +65,6 @@ class Home extends Component {
             },
             imgUrl: 'https://user-images.githubusercontent.com/38416128/78503521-b050ac00-7799-11ea-9844-d9b9835dc39e.png',
             subTitle: '日本最古老的公园之一',
-            spend: '97',
             likeUserInfo: [
               {
                 avator: 'https://user-images.githubusercontent.com/38416128/78503841-c2334e80-779b-11ea-9ef0-64440f43c31f.JPG',

@@ -1,0 +1,103 @@
+@import '../../style/theme.less';
+.header {
+  height: 4em;
+  text-align: center;
+  line-height: 4em;
+  color: @color-text-blue;
+  font-size: 1.2em;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  .back-icon {
+    position: absolute;
+    top: 2em;
+    transform: translateY(-50%);
+    left: 1em;
+  }
+  .share-icon {
+    position: absolute;
+    top: 2em;
+    transform: translateY(-50%);
+    right: 1em;
+  }
+}
+.container {
+  background: #fff;
+}
+.swiper-container {
+  margin-top: 4.8em;
+}
+.img-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 18em;
+}
+.img-item {
+  position: absolute;
+  width: 100%;
+  height: 18em;
+}
+.content-container {
+  margin: 0 1.2em;
+}
+.title-container {
+  height: 5em;
+  display: flex;
+  line-height: 5em;
+  .title {
+    font-size: 2em;
+    flex: 2;
+  }
+  .info {
+    flex: 1;
+    display: flex;
+    color: @color-text-gray !important;
+    div {
+      margin: auto;
+      margin-right: 0;
+    }
+    .info-icon {
+      font-size: 1.5em;
+      margin-right: 0.2em;
+    }
+  }
+}
+
+.intro-container {
+  font-size: 1.1em;
+  margin-bottom: 1.2em;
+}
+
+.author-container {
+  height: 5em;
+  line-height: 5em;
+  padding-bottom: 2em;
+  border-bottom: 1px solid #b8b6b6;
+  .author-info {
+    float: left;
+    display: flex;
+    .avator {
+      width: 4em;
+      height: 4em;
+      margin: .5em 1em 0 0;
+      border-radius: 50%;
+      background-size: contain;
+    }
+    .name {
+      font-size: 1.3em;
+    }
+  }
+  .subscribe {
+    float: right;
+    margin-top: 1.5em;
+    .am-button {
+      font-size: 1em;
+      height: 2em;
+      line-height: 2em;
+      padding: 0 1em;
+      border: 1px solid @color-bg-blue;
+      border-radius: 5px;
+      color: @color-text-blue;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-03-19 04:13:57
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-04-04 15:01:51
+ * @LastEditTime: 2020-04-23 17:29:31
  */
 import React, { Suspense, Component } from 'react';
 import { observer, inject } from 'mobx-react';
@@ -11,6 +11,7 @@ import { HashRouter, Route, withRouter, Switch, Redirect } from 'react-router-do
 
 import Welcome from './pages/Welcome';
 import Singup from './pages/Singup';
+import Activities from './pages/Activities'
 
 @observer
 class SinglePages extends Component {
@@ -29,13 +30,14 @@ class SinglePages extends Component {
     })
   }
   render() {
-    const { clientHeight } = this.state
+    const { screenInfo } = this.state
     return (
       <HashRouter>
         <Switch>
           <Suspense fallback={null}>
-            <Route path="/single/welcome" exact component={() => <Welcome clientHeight={clientHeight} />} />
-            <Route path="/single/singup" component={() => <Singup clientHeight={clientHeight} />}></Route>
+            <Route path="/single/welcome" exact component={() => <Welcome screenInfo={screenInfo} />} />
+            <Route path="/single/singup" component={() => <Singup screenInfo={screenInfo} />}></Route>
+            <Route path="/single/activities" component={() => <Activities screenInfo={screenInfo} />}></Route>
           </Suspense>
         </Switch>
       </HashRouter>
