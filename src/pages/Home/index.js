@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-03-22 16:19:12
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-04-06 16:59:02
+ * @LastEditTime: 2020-04-26 23:30:53
  */
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
@@ -15,7 +15,7 @@ class Home extends Component {
   renderContent = tab => {
     console.log(tab)
     return (
-      <div style={{width: '93%', margin: '44px auto 65px auto' }}>
+      <div style={{width: '93%', margin: '44px auto 65px auto' }} className="home-container">
         <img src={tab.headImgUrl} alt="" style={{width: '100%' }} />
         <div className="schedule-content">
         {
@@ -29,10 +29,10 @@ class Home extends Component {
               </div>
               <div className="info-desc">
                 <p className="info-subtitle text-ellipsis">{item.subTitle}</p>
-                { item.spend && <p className="spend"><span>{item.spend}</span>元/人</p>}
+                { item.spend && <p className="spend-aver"><span>{item.spend}</span>元/人</p>}
               </div>
               <div className="like-info">
-                <MyIcon type="iconLike" className="like-icon" />
+                <MyIcon type="icongood" className="like-icon" />
                 {
                   item.likeUserInfo.map(item => (
                     <div className="avator" style={{backgroundImage: `url(${item.avator})`}} />

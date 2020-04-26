@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-03-19 04:54:06
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-03-22 16:33:43
+ * @LastEditTime: 2020-04-26 23:55:06
  */
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
@@ -75,7 +75,7 @@ class Mine extends Component {
         </div>
         <div>
         <Tabs tabs={tabs}
-          initialPage={1}
+          initialPage={0}
           onChange={(tab, index) => { console.log('onChange', index, tab); }}
           onTabClick={(tab, index) => { console.log('onTabClick', index, tab); }}
           tabBarUnderlineStyle={{display: 'none'}}

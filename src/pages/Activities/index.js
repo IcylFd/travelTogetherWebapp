@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-03-19 04:54:06
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-04-23 19:06:26
+ * @LastEditTime: 2020-04-24 16:16:36
  */
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
@@ -33,7 +33,8 @@ class Singup extends Component {
       authorInfo: {
         name: 'icy',
         avatorUrl: 'https://user-images.githubusercontent.com/38416128/78503841-c2334e80-779b-11ea-9ef0-64440f43c31f.JPG',
-        userId: '1'
+        userId: '1',
+        subInfo: '旅行生活博主aaaaaaaaaaaaaaaaaa'
       },
       weather: [
         {
@@ -44,7 +45,7 @@ class Singup extends Component {
         },
         {
           date: '4月2日',
-          type: 'rain',
+          type: 'light_rain',
           top: 22,
           low: 18
         },
@@ -59,16 +60,31 @@ class Singup extends Component {
         city: '京都',
         district: '涉谷区',
         street: '神宫',
-        num: '12-1'
+        detail: '12-1'
       },
       spend: '1000日元/人'
     }
   }
+  renderWeather = (item) => {
+    const dateArr = item.date.split('')
+    return (
+      <div className="weather-item">
+        <div className="item-top">
+          <div className="date">{dateArr[0]}<span>{dateArr[1]}</span>{dateArr[2]}<span>{dateArr[3]}</span></div>
+          <MyIcon className="weather-icon" type={`iconweather_${item.type}`}></MyIcon>
+        </div>
+        <div className="item-bottom">
+          <div className="weather-num">{item.low} / {item.top}℃</div>
+        </div>
+      </div>
+    )
+  }
+
   render() {
-    const { screenInfo: { clientHeight } } = this.props
+    // const { screenInfo: { clientHeight } } = this.props
     const { activityData } = this.state
     return (
-      <div style={{height: clientHeight}} className="container">
+      <div className="container">
         <Header title={activityData.subTitle}/>
         <div className="swiper-container">
           <Carousel autoplay={true} infinite>
@@ -83,8 +99,8 @@ class Singup extends Component {
           <div class="title-container">
             <div class="title">{activityData.title}</div>
             <div class="info">
-              <div><MyIcon className="info-icon" type="iconLike" /><span>201</span></div>
-              <div><MyIcon className="info-icon" type="iconlike" /><span>100</span></div>
+              <div><MyIcon className="info-icon" type="icongood" /><span>201</span></div>
+              <div><MyIcon className="info-icon" type="iconfavorites" /><span>100</span></div>
             </div>
           </div>
           
@@ -93,10 +109,30 @@ class Singup extends Component {
             <div className="author-info">
               <div className="avator" style={{backgroundImage: `url(${activityData.authorInfo.avatorUrl})`}}></div>
               <div className="name">{activityData.authorInfo.name}</div>
+              {activityData.authorInfo.subInfo !== '' && <div className="sub-info">{activityData.authorInfo.subInfo}</div>}
             </div>
             <div className="subscribe"><Button>关注</Button></div>
           </div>
+          
+          <div className="weather-container">
+            { activityData.weather.map(item => this.renderWeather(item)) }
+          </div>
+
+          <div className="info-container">
+            <div className="info-item">
+              <MyIcon type="iconPointer"></MyIcon>
+              { activityData.position.city !== '' && <p>{activityData.position.city}</p> }
+              { activityData.position.district !== '' && <p>{activityData.position.district}</p> }
+              { activityData.position.street !== '' && <p>{activityData.position.street}</p> }
+              { activityData.position.detail !== '' && <p>{activityData.position.detail}</p> }
+            </div>
+            <div className="info-item">
+              <MyIcon type="iconmoney"></MyIcon>
+              { activityData.spend !== '' && <p>{activityData.spend}</p> }
+            </div>
+          </div>
         </div>
+        <Button className="add">添加到行程</Button>
       </div>
     )
   }

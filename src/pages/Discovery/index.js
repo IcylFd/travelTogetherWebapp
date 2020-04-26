@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-03-19 04:54:06
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-04-06 00:27:25
+ * @LastEditTime: 2020-04-23 22:13:54
  */
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
@@ -123,7 +123,7 @@ class Home extends Component {
           <div className="info-desc">
             <span className="open-time">{item.descInfo}</span>
             <div className="like-icon">
-              <MyIcon type="iconLike" />{item.likeNum}
+              <MyIcon type="icongood" />{item.likeNum}
             </div>
           </div>
         </div>

@@ -51,13 +51,13 @@
   .info {
     flex: 1;
     display: flex;
-    color: @color-text-gray !important;
+    color: @color-text-gray;
     div {
       margin: auto;
       margin-right: 0;
     }
     .info-icon {
-      font-size: 1.5em;
+      font-size: 2em;
       margin-right: 0.2em;
     }
   }
@@ -72,19 +72,31 @@
   height: 5em;
   line-height: 5em;
   padding-bottom: 2em;
-  border-bottom: 1px solid #b8b6b6;
+  margin-bottom: 2em;
+  border-bottom: 1px dotted #d4d2d2;
   .author-info {
     float: left;
     display: flex;
+    width: 70%;
     .avator {
       width: 4em;
       height: 4em;
-      margin: .5em 1em 0 0;
+      margin: .5em 1.5em 0 0;
       border-radius: 50%;
       background-size: contain;
     }
     .name {
       font-size: 1.3em;
+      color: @color-text-blue;
+    }
+    .sub-info {
+      width: 55%;
+      margin-left: 1em;
+      line-height: 5.3em;
+      color: @color-text-gray;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
   }
   .subscribe {
@@ -100,4 +112,65 @@
       color: @color-text-blue;
     }
   }
+}
+
+.weather-container {
+  display: flex;
+  margin-bottom: 2.5em;
+  .weather-item {
+    flex: 1;
+    border-right: 2px solid #cecbcb;
+    &:last-child {
+      border: none;
+    }
+  }
+  .item-top {
+    display: flex;
+    height: 2em;
+    justify-content: space-around;
+  }
+  .item-bottom {
+    padding-top: 1em;
+    font-size: 1.6em;
+    text-shadow: 1px 1px 1px #000;
+    color: #fff;
+    text-align: center;
+  }
+  .date {
+    color: @color-text-gray;
+    span {
+      font-size: 0.6em;
+    }
+  }
+  .weather-icon {
+    font-size: 2.5em;
+  }
+}
+
+.info-container {
+  .info-item {
+    font-size: 1.1em;
+    margin-bottom: 1em;
+    p {
+      display: inline-block;
+      border-right: 1px solid @color-text-gray;
+      padding: 0 0.4em;
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+  .anticon {
+    font-size: 1.1em;
+    color: @color-text-blue;
+    margin-right: 0.2em;
+  }
+}
+
+.add {
+  width: 10em;
+  background: @color-bg-blue;
+  color: @color-text-white;
+  border-radius: 2em;
+  margin: 2em auto;
 }
