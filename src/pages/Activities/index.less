@@ -1,176 +1,176 @@
 @import '../../style/theme.less';
-.header {
-  height: 4em;
-  text-align: center;
-  line-height: 4em;
-  color: @color-text-blue;
-  font-size: 1.2em;
-  letter-spacing: 0.1em;
-  font-weight: bold;
-  .back-icon {
-    position: absolute;
-    top: 2em;
-    transform: translateY(-50%);
-    left: 1em;
-  }
-  .share-icon {
-    position: absolute;
-    top: 2em;
-    transform: translateY(-50%);
-    right: 1em;
-  }
-}
-.container {
+.activities-container {
   background: #fff;
-}
-.swiper-container {
-  margin-top: 4.8em;
-}
-.img-wrapper {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  height: 18em;
-}
-.img-item {
-  position: absolute;
-  width: 100%;
-  height: 18em;
-}
-.content-container {
-  margin: 0 1.2em;
-}
-.title-container {
-  height: 5em;
-  display: flex;
-  line-height: 5em;
-  .title {
-    font-size: 2em;
-    flex: 2;
-  }
-  .info {
-    flex: 1;
-    display: flex;
-    color: @color-text-gray;
-    div {
-      margin: auto;
-      margin-right: 0;
-    }
-    .info-icon {
-      font-size: 2em;
-      margin-right: 0.2em;
-    }
-  }
-}
-
-.intro-container {
-  font-size: 1.1em;
-  margin-bottom: 1.2em;
-}
-
-.author-container {
-  height: 5em;
-  line-height: 5em;
-  padding-bottom: 2em;
-  margin-bottom: 2em;
-  border-bottom: 1px dotted #d4d2d2;
-  .author-info {
-    float: left;
-    display: flex;
-    width: 70%;
-    .avator {
-      width: 4em;
-      height: 4em;
-      margin: .5em 1.5em 0 0;
-      border-radius: 50%;
-      background-size: contain;
-    }
-    .name {
-      font-size: 1.3em;
-      color: @color-text-blue;
-    }
-    .sub-info {
-      width: 55%;
-      margin-left: 1em;
-      line-height: 5.3em;
-      color: @color-text-gray;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-  }
-  .subscribe {
-    float: right;
-    margin-top: 1.5em;
-    .am-button {
-      font-size: 1em;
-      height: 2em;
-      line-height: 2em;
-      padding: 0 1em;
-      border: 1px solid @color-bg-blue;
-      border-radius: 5px;
-      color: @color-text-blue;
-    }
-  }
-}
-
-.weather-container {
-  display: flex;
-  margin-bottom: 2.5em;
-  .weather-item {
-    flex: 1;
-    border-right: 2px solid #cecbcb;
-    &:last-child {
-      border: none;
-    }
-  }
-  .item-top {
-    display: flex;
-    height: 2em;
-    justify-content: space-around;
-  }
-  .item-bottom {
-    padding-top: 1em;
-    font-size: 1.6em;
-    text-shadow: 1px 1px 1px #000;
-    color: #fff;
+  .header {
+    height: 4em;
     text-align: center;
-  }
-  .date {
-    color: @color-text-gray;
-    span {
-      font-size: 0.6em;
+    line-height: 4em;
+    color: @color-text-blue;
+    font-size: 1.2em;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    .back-icon {
+      position: absolute;
+      top: 2em;
+      transform: translateY(-50%);
+      left: 1em;
+    }
+    .share-icon {
+      position: absolute;
+      top: 2em;
+      transform: translateY(-50%);
+      right: 1em;
     }
   }
-  .weather-icon {
-    font-size: 2.5em;
+  .swiper-container {
+    margin-top: 4.8em;
   }
-}
-
-.info-container {
-  .info-item {
+  .img-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 18em;
+  }
+  .img-item {
+    position: absolute;
+    width: 100%;
+    height: 18em;
+  }
+  .content-container {
+    margin: 0 1.2em;
+  }
+  .title-container {
+    height: 5em;
+    display: flex;
+    line-height: 5em;
+    .title {
+      font-size: 2em;
+      flex: 2;
+    }
+    .info {
+      flex: 1;
+      display: flex;
+      color: #818080;
+      div {
+        margin: .5em auto 0 auto;
+        width: 4.5em;
+      }
+      .info-icon {
+        font-size: 2em;
+        margin-right: 0.2em;
+      }
+    }
+  }
+  
+  .intro-container {
     font-size: 1.1em;
-    margin-bottom: 1em;
-    p {
-      display: inline-block;
-      border-right: 1px solid @color-text-gray;
-      padding: 0 0.4em;
+    margin-bottom: 1.2em;
+  }
+  
+  .author-container {
+    height: 5em;
+    line-height: 5em;
+    padding-bottom: 2em;
+    margin-bottom: 2em;
+    border-bottom: 1px dotted #d4d2d2;
+    .author-info {
+      float: left;
+      display: flex;
+      width: 70%;
+      .avator {
+        width: 4em;
+        height: 4em;
+        margin: .5em 1.5em 0 0;
+        border-radius: 50%;
+        background-size: contain;
+      }
+      .name {
+        font-size: 1.3em;
+        color: @color-text-blue;
+      }
+      .sub-info {
+        width: 55%;
+        margin-left: 1em;
+        line-height: 5.3em;
+        color: @color-text-gray;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+    .subscribe {
+      float: right;
+      margin-top: 1.5em;
+      .am-button {
+        font-size: 1em;
+        height: 2em;
+        line-height: 2em;
+        padding: 0 1em;
+        border: 1px solid @color-bg-blue;
+        border-radius: 5px;
+        color: @color-text-blue;
+      }
+    }
+  }
+  
+  .weather-container {
+    display: flex;
+    margin-bottom: 2.5em;
+    .weather-item {
+      flex: 1;
+      border-right: 2px solid #cecbcb;
       &:last-child {
         border: none;
       }
     }
+    .item-top {
+      display: flex;
+      height: 2em;
+      justify-content: space-around;
+    }
+    .item-bottom {
+      padding-top: 1em;
+      font-size: 1.5em;
+      text-shadow: 1px 1px 1px #000;
+      color: #fff;
+      text-align: center;
+    }
+    .date {
+      color: @color-text-gray;
+      span {
+        font-size: 0.6em;
+      }
+    }
+    .weather-icon {
+      font-size: 2.5em;
+    }
   }
-  .anticon {
-    font-size: 1.1em;
-    color: @color-text-blue;
-    margin-right: 0.2em;
+  
+  .info-container {
+    .info-item {
+      font-size: 1.1em;
+      margin-bottom: 1em;
+      p {
+        display: inline-block;
+        border-right: 1px solid @color-text-gray;
+        padding: 0 0.4em;
+        &:last-child {
+          border: none;
+        }
+      }
+    }
+    .anticon {
+      font-size: 1.1em;
+      color: @color-text-blue;
+      margin-right: 0.2em;
+    }
   }
-}
-
-.add {
-  width: 10em;
-  background: @color-bg-blue;
-  color: @color-text-white;
-  border-radius: 2em;
-  margin: 2em auto;
+  
+  .add {
+    width: 10em;
+    background: @color-bg-blue;
+    color: @color-text-white;
+    border-radius: 2em;
+    margin: 2em auto;
+  }
 }

@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-03-19 04:54:06
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-04-26 23:55:06
+ * @LastEditTime: 2020-04-28 01:08:55
  */
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
@@ -9,6 +9,7 @@ import { ImagePicker, Tabs } from 'antd-mobile';
 import Cropper from 'react-cropper'
 import Favourite from './Favourite';
 import TravelFootpoints from './TravelFootpoints'
+import Subscribe from './Subscribe'
 import './index.less'
 
 
@@ -19,7 +20,8 @@ const data = [{
 
 const tabs = [
   { title: '足迹'},
-  { title: '收藏'}
+  { title: '关注'},
+  { title: '收藏'},
 ]
 const cropper = React.createRef(null);
 
@@ -75,7 +77,7 @@ class Mine extends Component {
         </div>
         <div>
         <Tabs tabs={tabs}
-          initialPage={0}
+          initialPage={2}
           onChange={(tab, index) => { console.log('onChange', index, tab); }}
           onTabClick={(tab, index) => { console.log('onTabClick', index, tab); }}
           tabBarUnderlineStyle={{display: 'none'}}
@@ -85,6 +87,7 @@ class Mine extends Component {
           animated={false}
         >
           <TravelFootpoints />
+          <Subscribe />
           <Favourite />
         </Tabs>
         </div>

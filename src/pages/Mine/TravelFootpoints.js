@@ -1,12 +1,11 @@
 /*
  * @Date: 2020-03-19 04:54:06
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-04-27 02:03:01
+ * @LastEditTime: 2020-04-28 01:06:55
  */
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
 import moment from 'moment'
-import { ImagePicker, Tabs } from 'antd-mobile';
 import { MyIcon } from '../../components/Icons';
 
 @withRouter
@@ -53,7 +52,7 @@ class TravelFootpoints extends Component {
               <div className="date">{item.date}</div>
             </div>
             <div className="article">
-              <div class="top">
+              <div className="top">
                 <MyIcon type="iconedit"></MyIcon>
                 <div className="sperate-line"></div>
               </div>

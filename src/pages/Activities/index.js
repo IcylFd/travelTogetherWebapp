@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-03-19 04:54:06
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-04-24 16:16:36
+ * @LastEditTime: 2020-04-28 00:58:49
  */
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
@@ -84,7 +84,7 @@ class Singup extends Component {
     // const { screenInfo: { clientHeight } } = this.props
     const { activityData } = this.state
     return (
-      <div className="container">
+      <div className="activities-container">
         <Header title={activityData.subTitle}/>
         <div className="swiper-container">
           <Carousel autoplay={true} infinite>
