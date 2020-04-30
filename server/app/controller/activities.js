@@ -1,65 +1,64 @@
 /*
  * @Date: 2020-04-29 01:14:04
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-04-29 23:27:57
+ * @LastEditTime: 2020-05-01 01:14:57
  */
 // eslint-disable-next-line strict
 const Controller = require('egg').Controller;
 const moment = require('moment');
 
-class UserController extends Controller {
-  async signin() {
+class ActivitiesController extends Controller {
+  async list() {
+    const { ctx } = this;
+    const result = await ctx.service.activities.list(ctx.params.id);
+    if (result) {
+      ctx.body = {
+        status: 200,
+        data: result,
+      };
+    } else {
+      ctx.body = {
+        status: 500,
+        errMsg: '获取活动列表失败',
+      };
+    }
+  }
+
+  async detail() {
+    const { ctx } = this;
+    const result = await ctx.service.activities.detail(ctx.params.id);
+    if (result) {
+      ctx.body = {
+        status: 200,
+        data: result,
+      };
+    } else {
+      ctx.body = {
+        status: 500,
+        errMsg: '获取活动列表失败',
+      };
+    }
+  }
+
+  async create() {
     const { ctx } = this;
     const data = {
       ...ctx.request.body,
       createTime: moment().format('YYYY-MM-DD HH:mm:ss'),
     };
-    const result = await ctx.service.user.signin(data);
-    console.log(ctx.request.body);
+    const result = await ctx.service.activities.create(data);
     if (result) {
       ctx.body = {
         status: 200,
-        data: '注册成功',
+        data: '发布成功',
       };
     } else {
       ctx.body = {
         status: 500,
-        errMsg: '注册失败',
-      };
-    }
-  }
-
-  async signup() {
-    const { ctx } = this;
-    const result = await ctx.service.user.signup(ctx.request.body);
-    if (result) {
-      ctx.body = {
-        status: 200,
-        data: result,
-      };
-    } else {
-      ctx.body = {
-        status: 500,
-        errMsg: '注册失败',
-      };
-    }
-  }
-
-  async userInfo() {
-    const { ctx } = this;
-    const result = await ctx.service.user.userInfo(ctx.params.id);
-    if (result) {
-      ctx.body = {
-        status: 200,
-        data: result,
-      };
-    } else {
-      ctx.body = {
-        status: 500,
-        errMsg: '用户不存在',
+        errMsg: '发布失败',
       };
     }
   }
 }
 
-module.exports = UserController;
+module.exports = ActivitiesController;

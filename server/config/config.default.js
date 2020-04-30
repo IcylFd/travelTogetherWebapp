@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-04-29 00:43:20
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-04-29 01:13:10
+ * @LastEditTime: 2020-04-29 14:12:45
  */
 /* eslint valid-jsdoc: "off" */
 
@@ -26,6 +26,17 @@ module.exports = appInfo => {
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
+  };
+
+  // config.security = {
+  //   csrf: {
+  //     headerName: 'x-csrf-token', // 自定义请求头
+  //   },
+  // };
+  config.security = {
+    csrf: {
+      enable: false,
+    },
   };
 
   config.mysql = {
