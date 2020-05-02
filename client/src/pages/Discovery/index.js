@@ -1,17 +1,19 @@
 /*
  * @Date: 2020-03-19 04:54:06
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-04-28 18:19:37
+ * @LastEditTime: 2020-05-02 15:07:21
  */
 import React, { Component } from 'react';
+import { inject } from 'mobx-react';
 import { withRouter } from 'react-router-dom'
 import { Popover } from 'antd-mobile';
-import {MyIcon} from '../../components/Icons'
+import { MyIcon } from '../../components/Icons'
 import './index.less'
 
 const Item = Popover.Item;
 
 @withRouter
+@inject('activitiesStore')
 class Home extends Component {
   state = {
     filterVisible: false,
@@ -110,6 +112,10 @@ class Home extends Component {
     ]
   }
  
+  componentDidMount() {
+    const { activitiesStore: { getActivitiesList } } = this.props;
+    getActivitiesList();
+  }
   renderDiscoveryItem() {
     const { discoveryData } = this.state
     return discoveryData && discoveryData.map(item => (
@@ -158,7 +164,6 @@ class Home extends Component {
   render() {
     const { screenInfo: { clientWidth } } = this.props
     const { discoveryTags, filterVisible } = this.state;
-
     return (
       <div style={{marginTop: 50, padding: '10px 20px'}}>
         <div className="discovery-header">
