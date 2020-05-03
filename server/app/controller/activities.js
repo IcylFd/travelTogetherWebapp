@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-04-29 01:14:04
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-05-01 01:14:57
+ * @LastEditTime: 2020-05-03 13:54:54
  */
 // eslint-disable-next-line strict
 const Controller = require('egg').Controller;
@@ -13,12 +13,14 @@ class ActivitiesController extends Controller {
     const result = await ctx.service.activities.list(ctx.params.id);
     if (result) {
       ctx.body = {
+        errno: 0,
         status: 200,
         data: result,
       };
     } else {
       ctx.body = {
         status: 500,
+        errno: 40001,
         errMsg: '获取活动列表失败',
       };
     }
@@ -30,11 +32,13 @@ class ActivitiesController extends Controller {
     if (result) {
       ctx.body = {
         status: 200,
+        errno: 0,
         data: result,
       };
     } else {
       ctx.body = {
         status: 500,
+        errno: 40001,
         errMsg: '获取活动列表失败',
       };
     }
@@ -50,11 +54,13 @@ class ActivitiesController extends Controller {
     if (result) {
       ctx.body = {
         status: 200,
+        errno: 0,
         data: '发布成功',
       };
     } else {
       ctx.body = {
         status: 500,
+        errno: 40001,
         errMsg: '发布失败',
       };
     }

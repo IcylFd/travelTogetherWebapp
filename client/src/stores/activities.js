@@ -1,9 +1,9 @@
 /*
  * @Date: 2020-05-02 14:53:08
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-05-02 15:24:53
+ * @LastEditTime: 2020-05-03 16:41:18
  */
-import { observable, action, computed } from 'mobx';
+import { observable, action, toJS } from 'mobx';
 import { Toast } from 'antd-mobile';
 import API from '../services/app';
 
@@ -12,13 +12,14 @@ class Activities {
   @observable loading = false
 
   @action.bound
-   async getActivitiesList() {
+  async getActivitiesList() {
     this.loading = true;
     return await API.getActivitiesList().then(data => {
-      this.activitiesList = data;
+      this.activitiesList = data.list;
+      console.log(toJS(this.activitiesList), '---')
       this.loading = false;
     }).catch(err => {
-      this.toolList = [];
+      this.activitiesList = [];
       this.loading = false;
       Toast.fail(`获取文章列表错误：${err}`, 3);
     });

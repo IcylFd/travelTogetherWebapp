@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-04-29 01:14:04
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-04-29 23:27:57
+ * @LastEditTime: 2020-05-03 13:56:30
  */
 // eslint-disable-next-line strict
 const Controller = require('egg').Controller;
@@ -35,11 +35,13 @@ class UserController extends Controller {
     if (result) {
       ctx.body = {
         status: 200,
+        errno: 0,
         data: result,
       };
     } else {
       ctx.body = {
         status: 500,
+        errno: 40001,
         errMsg: '注册失败',
       };
     }
@@ -51,11 +53,13 @@ class UserController extends Controller {
     if (result) {
       ctx.body = {
         status: 200,
+        errno: 0,
         data: result,
       };
     } else {
       ctx.body = {
         status: 500,
+        errno: 40001,
         errMsg: '用户不存在',
       };
     }

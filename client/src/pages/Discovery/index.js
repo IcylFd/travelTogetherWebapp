@@ -1,10 +1,11 @@
 /*
  * @Date: 2020-03-19 04:54:06
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-05-02 15:07:21
+ * @LastEditTime: 2020-05-03 16:45:36
  */
 import React, { Component } from 'react';
-import { inject } from 'mobx-react';
+import { toJS } from 'mobx'
+import { inject, observer } from 'mobx-react';
 import { withRouter } from 'react-router-dom'
 import { Popover } from 'antd-mobile';
 import { MyIcon } from '../../components/Icons'
@@ -14,38 +15,39 @@ const Item = Popover.Item;
 
 @withRouter
 @inject('activitiesStore')
-class Home extends Component {
+@observer
+class Discovery extends Component {
   state = {
     filterVisible: false,
     selectedTag: [],
     discoveryData: [
-      {
-        title: 'IFS',
-        subTitle: '和妈妈一起买买买',
-        imgUrl: 'https://user-images.githubusercontent.com/38416128/78419061-586c5500-7674-11ea-9a52-3c4bde684304.jpeg',
-        spend: '97',
-        descInfo: '9:00-22:00 营业',
-        likeNum: 233,
-        type: '购物'
-      },
-      {
-        title: 'Line Friends',
-        subTitle: '大陆第二家LINE咖啡馆',
-        imgUrl: 'https://user-images.githubusercontent.com/38416128/78419061-586c5500-7674-11ea-9a52-3c4bde684304.jpeg',
-        spend: '',
-        descInfo: '9:00-22:00 营业',
-        likeNum: 233,
-        type: '休闲'
-      },
-      {
-        title: 'IFS',
-        subTitle: '和妈妈一起买买买',
-        imgUrl: 'https://user-images.githubusercontent.com/38416128/78419061-586c5500-7674-11ea-9a52-3c4bde684304.jpeg',
-        spend: '',
-        descInfo: '9:00-22:00 营业',
-        likeNum: 233,
-        type: '话剧'
-      }
+      // {
+      //   title: 'IFS',
+      //   subTitle: '和妈妈一起买买买',
+      //   imgUrl: 'https://user-images.githubusercontent.com/38416128/78419061-586c5500-7674-11ea-9a52-3c4bde684304.jpeg',
+      //   spend: '97',
+      //   descInfo: '9:00-22:00 营业',
+      //   likeNum: 233,
+      //   type: '购物'
+      // },
+      // {
+      //   title: 'Line Friends',
+      //   subTitle: '大陆第二家LINE咖啡馆',
+      //   imgUrl: 'https://user-images.githubusercontent.com/38416128/78419061-586c5500-7674-11ea-9a52-3c4bde684304.jpeg',
+      //   spend: '',
+      //   descInfo: '9:00-22:00 营业',
+      //   likeNum: 233,
+      //   type: '休闲'
+      // },
+      // {
+      //   title: 'IFS',
+      //   subTitle: '和妈妈一起买买买',
+      //   imgUrl: 'https://user-images.githubusercontent.com/38416128/78419061-586c5500-7674-11ea-9a52-3c4bde684304.jpeg',
+      //   spend: '',
+      //   descInfo: '9:00-22:00 营业',
+      //   likeNum: 233,
+      //   type: '话剧'
+      // }
     ],
     filterData: [
       {
@@ -113,11 +115,17 @@ class Home extends Component {
   }
  
   componentDidMount() {
-    const { activitiesStore: { getActivitiesList } } = this.props;
+    this.getDiscoveryList()
+  }
+
+  getDiscoveryList() {
+    const { activitiesStore: { getActivitiesList, activitiesList } } = this.props;
     getActivitiesList();
   }
   renderDiscoveryItem() {
-    const { discoveryData } = this.state
+    // const { discoveryData } = this.state
+    const { activitiesStore: { activitiesList } } = this.props;
+    const discoveryData = toJS(activitiesList)
     return discoveryData && discoveryData.map(item => (
       <div className="item" onClick={() => this.props.history.push('/single/activities')}>
         <div className="type-tag">{item.type}</div>
@@ -162,8 +170,9 @@ class Home extends Component {
     });
   };
   render() {
-    const { screenInfo: { clientWidth } } = this.props
+    const { screenInfo: { clientWidth }, activitiesStore: { loading, activitiesList } } = this.props
     const { discoveryTags, filterVisible } = this.state;
+    console.log(loading, toJS(activitiesList))
     return (
       <div style={{marginTop: 50, padding: '10px 20px'}}>
         <div className="discovery-header">
@@ -188,12 +197,17 @@ class Home extends Component {
             <MyIcon type="iconfilter" className="header-icon"></MyIcon>
           </Popover>
         </div>
-        <div className="discovery-content">
-          {this.renderDiscoveryItem()}
-        </div>
+        {
+          loading
+          ? <MyIcon type="iconloading"></MyIcon>
+          : <div className="discovery-content">
+              {this.renderDiscoveryItem()}
+            </div>
+        }
+        
       </div>
     )
   }
 }
 
-export default Home;
+export default Discovery;
