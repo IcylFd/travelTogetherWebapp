@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-03-19 04:54:06
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-05-03 16:45:36
+ * @LastEditTime: 2020-05-06 18:59:43
  */
 import React, { Component } from 'react';
 import { toJS } from 'mobx'
@@ -21,33 +21,33 @@ class Discovery extends Component {
     filterVisible: false,
     selectedTag: [],
     discoveryData: [
-      // {
-      //   title: 'IFS',
-      //   subTitle: '和妈妈一起买买买',
-      //   imgUrl: 'https://user-images.githubusercontent.com/38416128/78419061-586c5500-7674-11ea-9a52-3c4bde684304.jpeg',
-      //   spend: '97',
-      //   descInfo: '9:00-22:00 营业',
-      //   likeNum: 233,
-      //   type: '购物'
-      // },
-      // {
-      //   title: 'Line Friends',
-      //   subTitle: '大陆第二家LINE咖啡馆',
-      //   imgUrl: 'https://user-images.githubusercontent.com/38416128/78419061-586c5500-7674-11ea-9a52-3c4bde684304.jpeg',
-      //   spend: '',
-      //   descInfo: '9:00-22:00 营业',
-      //   likeNum: 233,
-      //   type: '休闲'
-      // },
-      // {
-      //   title: 'IFS',
-      //   subTitle: '和妈妈一起买买买',
-      //   imgUrl: 'https://user-images.githubusercontent.com/38416128/78419061-586c5500-7674-11ea-9a52-3c4bde684304.jpeg',
-      //   spend: '',
-      //   descInfo: '9:00-22:00 营业',
-      //   likeNum: 233,
-      //   type: '话剧'
-      // }
+      {
+        title: 'IFS',
+        subTitle: '和妈妈一起买买买',
+        imgUrl: 'https://user-images.githubusercontent.com/38416128/78419061-586c5500-7674-11ea-9a52-3c4bde684304.jpeg',
+        spend: '97',
+        descInfo: '9:00-22:00 营业',
+        likeNum: 233,
+        type: '购物'
+      },
+      {
+        title: 'Line Friends',
+        subTitle: '大陆第二家LINE咖啡馆',
+        imgUrl: 'https://user-images.githubusercontent.com/38416128/78419061-586c5500-7674-11ea-9a52-3c4bde684304.jpeg',
+        spend: '',
+        descInfo: '9:00-22:00 营业',
+        likeNum: 233,
+        type: '休闲'
+      },
+      {
+        title: 'IFS',
+        subTitle: '和妈妈一起买买买',
+        imgUrl: 'https://user-images.githubusercontent.com/38416128/78419061-586c5500-7674-11ea-9a52-3c4bde684304.jpeg',
+        spend: '',
+        descInfo: '9:00-22:00 营业',
+        likeNum: 233,
+        type: '话剧'
+      }
     ],
     filterData: [
       {
@@ -115,7 +115,7 @@ class Discovery extends Component {
   }
  
   componentDidMount() {
-    this.getDiscoveryList()
+    // this.getDiscoveryList()
   }
 
   getDiscoveryList() {
@@ -123,9 +123,9 @@ class Discovery extends Component {
     getActivitiesList();
   }
   renderDiscoveryItem() {
-    // const { discoveryData } = this.state
-    const { activitiesStore: { activitiesList } } = this.props;
-    const discoveryData = toJS(activitiesList)
+    const { discoveryData } = this.state
+    // const { activitiesStore: { activitiesList } } = this.props;
+    // const discoveryData = toJS(activitiesList)
     return discoveryData && discoveryData.map(item => (
       <div className="item" onClick={() => this.props.history.push('/single/activities')}>
         <div className="type-tag">{item.type}</div>

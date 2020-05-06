@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-03-19 04:54:06
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-04-28 18:08:15
+ * @LastEditTime: 2020-05-06 19:10:38
  */
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
@@ -18,7 +18,7 @@ class TravelFootpoints extends Component {
         title: '一场追寻，日本之光的旅行',
         activityTitle: '东京芝公园',
         content: '这好似一件很奇妙的事情——我的耳朵分明一直在工作，但在认真聆听之前，她却像蔫了一样。一场追寻，日本之光的旅行',
-        headImg: 'https://user-images.githubusercontent.com/38416128/80085384-b9f45500-858a-11ea-94d0-fc43380ae7e0.jpg'
+        headImg: 'https://user-images.githubusercontent.com/38416128/78503521-b050ac00-7799-11ea-9844-d9b9835dc39e.png'
       },
       {
         year: '2019',
@@ -26,7 +26,7 @@ class TravelFootpoints extends Component {
         title: '一场追寻，日本之光的旅行',
         activityTitle: '东京芝公园',
         content: '这好似一件很奇妙的事情——我的耳朵分明一直在工作，但在认真聆听之前，她却像蔫了一样。一场追寻',
-        headImg: 'https://user-images.githubusercontent.com/38416128/80085384-b9f45500-858a-11ea-94d0-fc43380ae7e0.jpg'
+        headImg: 'https://user-images.githubusercontent.com/38416128/78503521-b050ac00-7799-11ea-9844-d9b9835dc39e.png'
       },
       {
         year: '2020',
@@ -34,7 +34,7 @@ class TravelFootpoints extends Component {
         title: '一场追寻，日本之光的旅行',
         activityTitle: '东京芝公园',
         content: '这好似一件很奇妙的事情——我的耳朵分明一直在工作，但在认真聆听之前，她却像蔫了一样。一场追寻',
-        headImg: 'https://user-images.githubusercontent.com/38416128/80085384-b9f45500-858a-11ea-94d0-fc43380ae7e0.jpg'
+        headImg: 'https://user-images.githubusercontent.com/38416128/78503521-b050ac00-7799-11ea-9844-d9b9835dc39e.png'
       }
     ]
   }

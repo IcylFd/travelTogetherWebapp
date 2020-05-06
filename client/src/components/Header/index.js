@@ -1,12 +1,13 @@
 /*
  * @Date: 2020-03-19 18:08:49
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-03-22 16:34:37
+ * @LastEditTime: 2020-05-06 18:14:28
  */
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
 import './index.less'
 import { NavBar, Icon } from 'antd-mobile';
+import { MyIcon } from '../Icons'
 
 @withRouter
 class Header extends Component {
@@ -31,11 +32,11 @@ class Header extends Component {
         <NavBar
           mode="light"
           icon={<Icon type="left" />}
-          onLeftClick={() => console.log('onLeftClick')}
-          rightContent={[
+          onLeftClick={() => this.props.history.goBack()}
+          rightContent={
             // <Icon key="0" type="search" style={{ marginRight: '16px' }} />,
-            <Icon key="1" type="ellipsis" />,
-          ]}
+            this.props.location.pathname === '/main/schedule' ? <MyIcon onClick={() => this.props.history.push('/main/schedule/edit')} type="iconedit" /> : <Icon key="1" type="ellipsis" />
+          }
         >
           {this.renderHeaderTitle()}
         </NavBar>
