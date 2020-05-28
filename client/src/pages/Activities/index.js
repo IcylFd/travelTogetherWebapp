@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-03-19 04:54:06
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-04-28 00:58:49
+ * @LastEditTime: 2020-05-18 12:43:30
  */
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
@@ -29,12 +29,14 @@ class Singup extends Component {
         'https://user-images.githubusercontent.com/38416128/80085397-bcef4580-858a-11ea-85cd-ee2a01c19034.jpg',
         'https://user-images.githubusercontent.com/38416128/80085402-beb90900-858a-11ea-9b9e-3cc91af26577.jpg'
       ],
-      content: 'aaaaaa, aaaaaa. aaaaaaaaaaaaaaaaaa. aaaaaa, aaaaaa, aaaaaa',
+      content: `樱花季去日本，是一件很浪漫的事🌸。\n
+      芝公园是东京首选赏樱地之一，我们偶然在那找到了一处人流甚少的樱花小道，还能跟铁塔近距离合照。
+      具体位置是在公园后方，寺庙附近，靠近停车场，这里不像公园前方那么多人，人们基本都只是经过不停留，所以此处更有日本那种干净素雅，却又充满生活气息的感觉。`,
       authorInfo: {
         name: 'icy',
         avatorUrl: 'https://user-images.githubusercontent.com/38416128/78503841-c2334e80-779b-11ea-9ef0-64440f43c31f.JPG',
         userId: '1',
-        subInfo: '旅行生活博主aaaaaaaaaaaaaaaaaa'
+        subInfo: '旅行生活博主'
       },
       weather: [
         {
@@ -104,7 +106,7 @@ class Singup extends Component {
             </div>
           </div>
           
-          <div className="intro-container">{activityData.content}</div>
+          <p className="intro-container">{activityData.content}</p>
           <div className="author-container">
             <div className="author-info">
               <div className="avator" style={{backgroundImage: `url(${activityData.authorInfo.avatorUrl})`}}></div>

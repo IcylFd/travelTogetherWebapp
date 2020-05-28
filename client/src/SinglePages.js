@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-03-19 04:13:57
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-04-23 17:29:31
+ * @LastEditTime: 2020-05-28 17:36:17
  */
 import React, { Suspense, Component } from 'react';
 import { observer, inject } from 'mobx-react';
@@ -12,6 +12,8 @@ import { HashRouter, Route, withRouter, Switch, Redirect } from 'react-router-do
 import Welcome from './pages/Welcome';
 import Singup from './pages/Singup';
 import Activities from './pages/Activities'
+import Article from './pages/Article'
+import SelectTag from './pages/Article/selectTag.js'
 
 @observer
 class SinglePages extends Component {
@@ -38,6 +40,8 @@ class SinglePages extends Component {
             <Route path="/single/welcome" exact component={() => <Welcome screenInfo={screenInfo} />} />
             <Route path="/single/singup" component={() => <Singup screenInfo={screenInfo} />}></Route>
             <Route path="/single/activities" component={() => <Activities screenInfo={screenInfo} />}></Route>
+            <Route path="/single/article" exact component={() => <Article screenInfo={screenInfo} />}></Route>
+            <Route path="/single/article/tag" exact component={() => <SelectTag screenInfo={screenInfo} />}></Route>
           </Suspense>
         </Switch>
       </HashRouter>

@@ -1,0 +1,130 @@
+@import '../../style/theme.less';
+
+.article {
+  .am-list-item {
+    padding: 0;
+  }
+  .am-input-label.am-input-label-5 {
+    margin-right: 1.5em;
+    font-size: 1em;
+  }
+  .header {
+    height: 50px;
+    text-align: left;
+    line-height: 50px;
+    color: @color-text-blue;
+    font-size: 1.2em;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    .back-icon {
+      margin-left: 1em;
+      margin-top: 1em;
+    }
+  }
+  .article-container {
+    .image-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .img-scale {
+      width: 8em;
+      height: 5em;
+      position: relative;
+      margin-right: 1em;
+      margin-bottom: 1em;
+      border: 1px solid @color-border-gray;
+      border-radius: .5em;
+    }
+    .img {
+      max-width: 100%;
+      max-height: 100%;
+      width:auto;
+      height:auto;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      border-radius: .5em;
+      transform: translate3d(-50%,-50%,0);
+      -webkit-transform: translate3d(-50%,-50%,0);
+    }
+    .add-img {
+      width: 5em;
+      height: 5em;
+      border: 1px solid @color-border-gray;
+      border-radius: .5em;
+      color: @color-border-gray;
+      text-align: center;
+      line-height: 5em;
+      b {
+        font-size: 2em;
+      }
+    }
+    .title, .content, .tag, .position, .spend {
+      border-bottom: 1px solid @color-border-gray;
+      margin-top: 1em;
+    }
+    .spend {
+      font-size: 1em;
+      .anticon {
+        margin-right: 1em;
+      }
+    }
+    .tag, .position {
+      height: 3em;
+      line-height: 3em;
+      .left {
+        float: left;
+        .anticon {
+          margin-right: 1em;
+        }
+      }
+      .right {
+        float: right;
+        line-height: 3em;
+        .am-icon {
+          padding-top: 0.5em;
+        }
+        .right-des {
+          line-height: 2em;
+          color: @color-text-des;
+        }
+      }
+    }
+    .publish-btn {
+      width: 20em;
+      height: 3em;
+      margin: 30px auto 10px auto;
+      text-align: center;
+      line-height: 3em;
+      color: #fff;
+      font-size: 1.2em;
+      border-radius: 2em;
+      background-color: @color-bg-blue;
+    }
+  }
+}
+
+.tag {
+  .header {
+    height: 50px;
+    text-align: left;
+    line-height: 50px;
+    color: @color-text-blue;
+    font-size: 1.2em;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    .back-icon {
+      margin: 0em 1em 0 1em;
+    }
+  }
+  .tag-container {
+    margin-top: 60px;
+    .tag-item {
+      width: 90%;
+      margin: 15px auto;
+      height: 5em;
+      background: @color-bg-blue;
+      border-radius: 1.5em;
+    }
+  }
+}

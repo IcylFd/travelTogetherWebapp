@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-03-19 04:54:06
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-04-28 17:56:12
+ * @LastEditTime: 2020-05-18 15:33:10
  */
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
@@ -13,37 +13,60 @@ class Subscribe extends Component {
   state = {
     companionsData: [
       {
-        avatorUrl: 'https://user-images.githubusercontent.com/38416128/78419061-586c5500-7674-11ea-9a52-3c4bde684304.jpeg',
-        name: 'xiaohong',
+        avatorUrl: 'https://user-images.githubusercontent.com/38416128/82178566-e6dc2380-990e-11ea-97e8-b32615d3f762.jpg',
+        name: 'Lily',
         id: 1
       },
       {
-        avatorUrl: 'https://user-images.githubusercontent.com/38416128/78419061-586c5500-7674-11ea-9a52-3c4bde684304.jpeg',
-        name: 'xiaoming',
+        avatorUrl: 'https://user-images.githubusercontent.com/38416128/82178619-ff4c3e00-990e-11ea-9229-8f574d06a63a.jpg',
+        name: '小明',
         id: 2
       },
       {
-        avatorUrl: 'https://user-images.githubusercontent.com/38416128/78419061-586c5500-7674-11ea-9a52-3c4bde684304.jpeg',
-        name: 'xiaoming',
-        id: 2
-      },
-      {
-        avatorUrl: 'https://user-images.githubusercontent.com/38416128/78419061-586c5500-7674-11ea-9a52-3c4bde684304.jpeg',
-        name: 'xiaoming',
+        avatorUrl: 'https://user-images.githubusercontent.com/38416128/82179146-34a55b80-9910-11ea-841a-db5b7f1c3c50.jpg',
+        name: '美丽人生',
         id: 2
       },
     ],
     bloggersData: [
       {
         id: 1,
-        avatorUrl: 'https://user-images.githubusercontent.com/38416128/78503841-c2334e80-779b-11ea-9ef0-64440f43c31f.JPG',
+        avatorUrl: 'https://user-images.githubusercontent.com/38416128/82178579-ec396e00-990e-11ea-89ca-17c24693803e.jpg',
         name: '拍下美好',
         intro: '旅行摄影博主',
         isSubcribed: true
       },
       {
         id: 2,
-        avatorUrl: 'https://user-images.githubusercontent.com/38416128/78503841-c2334e80-779b-11ea-9ef0-64440f43c31f.JPG',
+        avatorUrl: 'https://user-images.githubusercontent.com/38416128/82178572-e93e7d80-990e-11ea-83d0-7e181d640578.jpg',
+        name: '港湾美食探索',
+        intro: '美食生活博主',
+        isSubcribed: true
+      },
+      {
+        id: 1,
+        avatorUrl: 'https://user-images.githubusercontent.com/38416128/82178579-ec396e00-990e-11ea-89ca-17c24693803e.jpg',
+        name: '拍下美好',
+        intro: '旅行摄影博主',
+        isSubcribed: true
+      },
+      {
+        id: 2,
+        avatorUrl: 'https://user-images.githubusercontent.com/38416128/82178572-e93e7d80-990e-11ea-83d0-7e181d640578.jpg',
+        name: '港湾美食探索',
+        intro: '美食生活博主',
+        isSubcribed: true
+      },
+      {
+        id: 1,
+        avatorUrl: 'https://user-images.githubusercontent.com/38416128/82178579-ec396e00-990e-11ea-89ca-17c24693803e.jpg',
+        name: '拍下美好',
+        intro: '旅行摄影博主',
+        isSubcribed: true
+      },
+      {
+        id: 2,
+        avatorUrl: 'https://user-images.githubusercontent.com/38416128/82178572-e93e7d80-990e-11ea-83d0-7e181d640578.jpg',
         name: '港湾美食探索',
         intro: '美食生活博主',
         isSubcribed: true

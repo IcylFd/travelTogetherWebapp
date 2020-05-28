@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-03-19 04:54:06
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-04-06 21:15:25
+ * @LastEditTime: 2020-05-18 17:20:53
  */
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
@@ -45,13 +45,17 @@ class Singup extends Component {
     return (
       <div style={{height: clientHeight}} className="container">
         <SignHeader title={curTitle}/>
-        <WingBlank mode={20}>
+        <WingBlank mode={20} className="back-container" style={{backgroundImage: curStep === 2 ? `url(${require('../../assets/img/invite.png')})` : ''}}>
           <WhiteSpace size="xl" />
           <Steps current={curStep} direction="horizontal">
             <Step icon={<MyIcon type="icondot-circle-solid" className="cur-icon" />} />
             <Step icon={<MyIcon type="icondot-circle-solid" className={(curStep > 1 || curStep === 1) && "cur-icon"} />} />
             <Step icon={<MyIcon type="icondot-circle-solid" className={curStep === 2 && "cur-icon"} />} />
           </Steps>
+          {
+            curStep === 2 &&
+            <div className="mask"></div>
+          }
           <WhiteSpace size="xl" />
           <div className="step-content">{this.renderCurStep()}</div>
         </WingBlank>

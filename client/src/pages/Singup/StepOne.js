@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-03-19 04:54:06
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-03-21 02:46:13
+ * @LastEditTime: 2020-05-18 15:34:56
  */
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
@@ -29,7 +29,7 @@ class StepOne extends Component {
         </div>
         <div className="login-part">
           <List>
-            <InputItem type="phone" placeholder="请输入手机号" onBlur={this.checkPhone}><MyIcon type="iconphone" /></InputItem>
+            <InputItem type="phone" placeholder="请输入昵称" onBlur={this.checkPhone}><MyIcon type="iconmy" /></InputItem>
             <InputItem type="password" placeholder="请输入密码" onBlur={this.checkPhone}><MyIcon type="iconpassword" /></InputItem>
           </List>
         </div>

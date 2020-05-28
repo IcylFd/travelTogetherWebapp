@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-03-19 04:54:06
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-05-06 18:59:43
+ * @LastEditTime: 2020-05-18 15:09:39
  */
 import React, { Component } from 'react';
 import { toJS } from 'mobx'
@@ -31,22 +31,31 @@ class Discovery extends Component {
         type: '购物'
       },
       {
-        title: 'Line Friends',
-        subTitle: '大陆第二家LINE咖啡馆',
-        imgUrl: 'https://user-images.githubusercontent.com/38416128/78419061-586c5500-7674-11ea-9a52-3c4bde684304.jpeg',
+        title: '炫彩万沐源乡村风景区',
+        subTitle: '动漫里的彩色童话镇',
+        imgUrl: 'https://user-images.githubusercontent.com/38416128/82178130-dc6d5a00-990d-11ea-9f47-23586835fa27.jpeg',
         spend: '',
-        descInfo: '9:00-22:00 营业',
-        likeNum: 233,
-        type: '休闲'
+        descInfo: '9:00-17:00 营业',
+        likeNum: 104,
+        type: '必逛景点'
       },
       {
-        title: 'IFS',
-        subTitle: '和妈妈一起买买买',
-        imgUrl: 'https://user-images.githubusercontent.com/38416128/78419061-586c5500-7674-11ea-9a52-3c4bde684304.jpeg',
-        spend: '',
-        descInfo: '9:00-22:00 营业',
-        likeNum: 233,
-        type: '话剧'
+        title: '明月松间·洱海酒店',
+        subTitle: '我想去大理的理由',
+        imgUrl: 'https://user-images.githubusercontent.com/38416128/82178136-decfb400-990d-11ea-8123-cef28837e6c2.jpeg',
+        spend: '450',
+        descInfo: '24小时营业',
+        likeNum: 23,
+        type: '探店'
+      },
+      {
+        title: '东京芝公园',
+        subTitle: '圣诞主题等你来',
+        imgUrl: 'https://user-images.githubusercontent.com/38416128/80085402-beb90900-858a-11ea-9b9e-3cc91af26577.jpg',
+        spend: '20',
+        descInfo: '',
+        likeNum: 12,
+        type: '人文景点'
       }
     ],
     filterData: [

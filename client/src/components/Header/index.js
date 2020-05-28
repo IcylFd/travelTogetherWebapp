@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-03-19 18:08:49
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-05-06 18:14:28
+ * @LastEditTime: 2020-05-18 12:36:00
  */
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
@@ -31,7 +31,7 @@ class Header extends Component {
       <div className="header">
         <NavBar
           mode="light"
-          icon={<Icon type="left" />}
+          icon={this.props.location.pathname === '/main/home' ? null : <Icon type="left" />}
           onLeftClick={() => this.props.history.goBack()}
           rightContent={
             // <Icon key="0" type="search" style={{ marginRight: '16px' }} />,

@@ -1,17 +1,20 @@
 /*
  * @Date: 2020-03-20 21:33:19
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-03-21 17:31:20
+ * @LastEditTime: 2020-05-18 15:39:50
  */
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
 import { inject } from 'mobx-react'
-import { Button, Icon, List, InputItem, Tag } from 'antd-mobile'
+import { Button, Icon, List, InputItem, Tag, DatePicker } from 'antd-mobile'
 import './index.less'
 
 @withRouter
 @inject('SignupStore')
 class StepTwo extends Component {
+  state = {
+    date: ''
+  }
   render() {
     const { SignupStore: { changeCurStep, tag } } = this.props
     return (
@@ -20,6 +23,20 @@ class StepTwo extends Component {
           <span className="form-title">昵称</span>
           <List>
             <InputItem onBlur={this.checkPhone}></InputItem>
+          </List>
+        </div>
+        <div className="name-form">
+          <span className="form-title">出生日期</span>
+          <List>
+            <DatePicker
+              mode="date"
+              // title="Select Date"
+              // extra="Optional"
+              value={this.state.date}
+              onChange={date => this.setState({ date })}
+            >
+              <List.Item arrow="horizontal"></List.Item>
+            </DatePicker>
           </List>
         </div>
         <div className="form">

@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-03-19 04:54:06
  * @LastEditors: lifangdi
- * @LastEditTime: 2020-05-06 17:54:14
+ * @LastEditTime: 2020-05-18 15:17:48
  */
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
@@ -53,6 +53,18 @@ class Schedule extends Component {
             icon: 'iconscenic'
           }
         ]
+      },
+      {
+        date: '2020/06/03',
+        day: 3,
+        name: '银座',
+        headImg: 'https://user-images.githubusercontent.com/38416128/82184333-0c225f00-991a-11ea-999f-63ba73371264.jpeg',
+        tags: [
+          {
+            name: '购物',
+            icon: 'iconshoppingcopy'
+          }
+        ]
       }
     ],
     companiers: [
@@ -62,11 +74,11 @@ class Schedule extends Component {
       },
       {
         id: 2,
-        avatarImg: 'https://user-images.githubusercontent.com/38416128/78503841-c2334e80-779b-11ea-9ef0-64440f43c31f.JPG'
+        avatarImg: 'https://user-images.githubusercontent.com/38416128/82178619-ff4c3e00-990e-11ea-9229-8f574d06a63a.jpg'
       },
       {
         id: 3,
-        avatarImg: 'https://user-images.githubusercontent.com/38416128/78503841-c2334e80-779b-11ea-9ef0-64440f43c31f.JPG'
+        avatarImg: 'https://user-images.githubusercontent.com/38416128/82179146-34a55b80-9910-11ea-841a-db5b7f1c3c50.jpg'
       }
     ]
   }
@@ -95,7 +107,7 @@ class Schedule extends Component {
             ))
           }
           </div>
-          <div>
+          <div style={{marginBottom: 60}}>
           {
             curPlan.map((item, index) => (
               <div className="plan-item">
